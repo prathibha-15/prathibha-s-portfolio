@@ -19,7 +19,7 @@ export default function Projects() {
       image: "/placeholder.svg?height=400&width=600",
       tags: ["AI", "OpenCV", "SVM", "Python"],
       date: "Aug–Oct 2024",
-      github: "https://github.com/prathibha-15/yoga-pose-estimation",
+      github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
     },
     {
       title: "Vendor Comparison Chatbot",
