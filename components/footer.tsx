@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="text-center">
             <p className="text-gray-400 mb-2">© 2024 Prathibha M. All rights reserved.</p>
             <p className="text-gray-400 flex items-center justify-center gap-1">
-              Made with <Heart className="h-4 w-4 text-red-500" /> using Next.js & Tailwind CSS
+              Made by <Heart className="h-4 w-4 text-red-500" />
             </p>
           </div>
         </div>
