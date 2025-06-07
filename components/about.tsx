@@ -100,7 +100,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-            Aspiring AI and full-stack developer with hands-on experience in building real-world applications using Python, ReactJS, and FastAPI. Interned at SAP Labs and Cube AI Solutions, with strong skills in machine learning, backend systems, and data-driven decision-making. Passionate about solving real-world problems, with 300+ LeetCode problems solved and a growing portfolio of impactful projects.
+            AI and backend-focused engineering student with hands-on experience in building intelligent systems using Python, FastAPI, and machine learning. Interned at SAP Labs and Cube AI Solutions, with a strong foundation in data-driven development and real-world problem-solving. Passionate about applying AI to create impactful solutions, with 300+ problems solved on LeetCode and a growing project portfolio.
           </p>
         </motion.div>
 
