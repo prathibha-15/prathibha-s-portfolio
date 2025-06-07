@@ -57,26 +57,29 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="flex flex-col lg:flex-row items-center justify-center gap-12 w-full max-w-6xl"
           >
-            {/* Personal Image */}
+            {/* Personal Image - Left Side */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative"
+              className="relative order-2 lg:order-1"
             >
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse"></div>
                 <img
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/images/profile.jpg"
                   alt="Prathibha M"
                   className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl z-10"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg?height=400&width=400"
+                  }}
                 />
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-full blur-xl animate-float"></div>
               </div>
             </motion.div>
 
-            {/* Terminal and Text Content */}
-            <div className="flex-1 max-w-2xl">
+            {/* Terminal and Text Content - Right Side */}
+            <div className="flex-1 max-w-2xl order-1 lg:order-2">
               <div className="terminal mb-8">
                 <div className="flex items-center mb-4">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
@@ -94,8 +97,10 @@ export default function Hero() {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5, duration: 0.8 }}
                     >
-                      <p className="text-blue-400 mt-2">AI/ML & Full-Stack Developer</p>
-                      <p className="text-purple-400 mt-1">Passionate about building intelligent solutions</p>
+                      <p className="text-blue-400 mt-2">AI/ML Enthusiast & Backend Developer</p>
+                      <p className="text-purple-400 mt-1">
+                        Passionate about building intelligent, data-driven solutions that solve real-world problems.
+                      </p>
                     </motion.div>
                   )}
                 </div>
