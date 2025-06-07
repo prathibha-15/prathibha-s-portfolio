@@ -55,28 +55,51 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="terminal mb-8 w-full max-w-2xl"
+            className="flex flex-col lg:flex-row items-center justify-center gap-12 w-full max-w-6xl"
           >
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <div className="ml-4 text-gray-400 text-sm">terminal</div>
-            </div>
-            <div className="font-mono">
-              <span className="text-gray-400">$ </span>
-              <span className="text-green-400">{text}</span>
-              {showCursor && <span className="terminal-cursor"></span>}
-              {showSubtitle && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                >
-                  <p className="text-blue-400 mt-2">AI/ML & Full-Stack Developer</p>
-                  <p className="text-purple-400 mt-1">Passionate about building intelligent solutions</p>
-                </motion.div>
-              )}
+            {/* Personal Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse"></div>
+                <img
+                  src="/placeholder.svg?height=400&width=400"
+                  alt="Prathibha M"
+                  className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl z-10"
+                />
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-full blur-xl animate-float"></div>
+              </div>
+            </motion.div>
+
+            {/* Terminal and Text Content */}
+            <div className="flex-1 max-w-2xl">
+              <div className="terminal mb-8">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="ml-4 text-gray-400 text-sm">terminal</div>
+                </div>
+                <div className="font-mono">
+                  <span className="text-gray-400">$ </span>
+                  <span className="text-green-400">{text}</span>
+                  {showCursor && <span className="terminal-cursor"></span>}
+                  {showSubtitle && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5, duration: 0.8 }}
+                    >
+                      <p className="text-blue-400 mt-2">AI/ML & Full-Stack Developer</p>
+                      <p className="text-purple-400 mt-1">Passionate about building intelligent solutions</p>
+                    </motion.div>
+                  )}
+                </div>
+              </div>
             </div>
           </motion.div>
 

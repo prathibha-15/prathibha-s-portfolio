@@ -16,7 +16,7 @@ export default function Projects() {
       title: "Yoga Pose Estimation System",
       description:
         "A real-time AI feedback system that uses OpenCV and SVM to analyze yoga poses and provide instant feedback to users. The system detects key body points and compares them with ideal pose references.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/yoga-pose-project.jpg", // Your actual project image
       tags: ["AI", "OpenCV", "SVM", "Python"],
       date: "Aug–Oct 2024",
       github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
@@ -25,7 +25,7 @@ export default function Projects() {
       title: "Vendor Comparison Chatbot",
       description:
         "Built during my internship at SAP Labs, this chatbot helps users compare vendors based on various parameters. Implemented using ReactJS for the frontend, FastAPI for the backend, and FAISS for efficient similarity search.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/vendor-chatbot-project.jpg", // Your actual project image
       tags: ["ReactJS", "FastAPI", "FAISS", "NLP"],
       date: "May–July 2024",
       github: "https://github.com/prathibha-15/vendor-comparison-chatbot",
@@ -34,7 +34,7 @@ export default function Projects() {
       title: "Movie Recommendation System",
       description:
         "A collaborative filtering-based recommendation system that suggests movies based on user preferences and viewing history. Utilizes the TMDb API for movie data and implements matrix factorization algorithms.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/movie-recommendation-project.jpg", // Your actual project image
       tags: ["Python", "Collaborative Filtering", "TMDb API"],
       date: "Apr–May 2024",
       github: "https://github.com/prathibha-15/movie-recommendation",
@@ -100,11 +100,15 @@ export default function Projects() {
               {projects.map((project, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
                   <Card className="overflow-hidden h-full">
-                    <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700">
+                    <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700 rounded-t-lg">
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image || "/placeholder.svg?height=400&width=600"}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        onError={(e) => {
+                          // Fallback to placeholder if image fails to load
+                          e.currentTarget.src = "/placeholder.svg?height=400&width=600"
+                        }}
                       />
                     </div>
                     <CardContent className="p-6">
