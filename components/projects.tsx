@@ -46,7 +46,7 @@ export default function Projects() {
       image: "/images/hotel-concierge-project.jpg",
       tags: ["AI", "NLP", "Hospitality Tech", "Face Recognition", "Chatbot", "PMS Integration"],
       date: "Jan–Mar 2024",
-      github: "https://github.com/prathibha-15/hotel-ai-concierge",
+      github: "https://github.com/prathibha-15/Hotel-Concierge-Project",
       features: [
         "24/7 automated guest assistance",
         "Room booking & management",
