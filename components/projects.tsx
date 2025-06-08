@@ -40,6 +40,23 @@ export default function Projects() {
       ],
     },
     {
+      title: "Hotel AI Concierge",
+      description:
+        "An AI-powered hotel concierge chatbot that revolutionizes traditional hospitality services by automating guest interactions. Integrates with Property Management Systems (PMS) to provide 24/7 personalized assistance for room bookings, check-ins, and special requests while reducing operational costs and improving guest experience.",
+      image: "/images/hotel-concierge-project.jpg",
+      tags: ["AI", "NLP", "Hospitality Tech", "Face Recognition", "Chatbot", "PMS Integration"],
+      date: "Jan–Mar 2024",
+      github: "https://github.com/prathibha-15/hotel-ai-concierge",
+      features: [
+        "24/7 automated guest assistance",
+        "Room booking & management",
+        "Face recognition check-in",
+        "Real-time PMS integration",
+        "Personalized guest services",
+        "Streamlined operational workflow",
+      ],
+    },
+    {
       title: "Movie Recommendation System",
       description:
         "A collaborative filtering-based recommendation system with an intuitive web interface. Users can select movies from a dropdown and receive personalized recommendations. Built using machine learning algorithms and the TMDb API for comprehensive movie data.",
