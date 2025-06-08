@@ -51,18 +51,13 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col items-center justify-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-center justify-center gap-12 w-full max-w-6xl"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl items-center">
             {/* Personal Image - Left Side */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative order-2 lg:order-1"
+              className="flex justify-center lg:justify-start"
             >
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse"></div>
@@ -79,40 +74,47 @@ export default function Hero() {
             </motion.div>
 
             {/* Terminal and Text Content - Right Side */}
-            <div className="flex-1 max-w-2xl order-1 lg:order-2">
-              <div className="terminal mb-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <div className="ml-4 text-gray-400 text-sm">terminal</div>
-                </div>
-                <div className="font-mono">
-                  <span className="text-gray-400">$ </span>
-                  <span className="text-green-400">{text}</span>
-                  {showCursor && <span className="terminal-cursor"></span>}
-                  {showSubtitle && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5, duration: 0.8 }}
-                    >
-                      <p className="text-blue-400 mt-2">AI/ML Enthusiast & Backend Developer</p>
-                      <p className="text-purple-400 mt-1">
-                        Passionate about building intelligent, data-driven solutions that solve real-world problems.
-                      </p>
-                    </motion.div>
-                  )}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="w-full max-w-2xl">
+                <div className="terminal mb-8 text-left">
+                  <div className="flex items-center mb-4">
+                    <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="ml-4 text-gray-400 text-sm">terminal</div>
+                  </div>
+                  <div className="font-mono">
+                    <span className="text-gray-400">$ </span>
+                    <span className="text-green-400">{text}</span>
+                    {showCursor && <span className="terminal-cursor"></span>}
+                    {showSubtitle && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                      >
+                        <p className="text-blue-400 mt-2">AI/ML Enthusiast & Backend Developer</p>
+                        <p className="text-purple-400 mt-1">
+                          Passionate about building intelligent, data-driven solutions that solve real-world problems.
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="flex flex-wrap justify-center gap-4 mt-8"
+            className="flex flex-wrap justify-center gap-4 mt-12"
           >
             <Button
               size="lg"
