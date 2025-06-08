@@ -63,6 +63,25 @@ export default function Projects() {
       ],
     },
     {
+      title: "Snack Squad Mobile App",
+      description:
+        "A streamlined Android food ordering app built with Kotlin and Android Studio. Features a simplified cart-based ordering system that eliminates address entry requirements, focusing on quick and efficient food ordering with special discounts, recommendations, and seamless order placement workflow.",
+      image: "/images/snack-squad-project.jpg",
+      tags: ["Android", "Kotlin", "Mobile Development", "UI/UX", "Food Tech"],
+      date: "Sep–Nov 2023",
+      github: "https://github.com/prathibha-15/Snack-Squad-App",
+      liveDemo: "https://www.youtube.com/watch?v=your-snack-squad-demo", // Video demo
+      demoType: "video",
+      features: [
+        "Streamlined cart functionality",
+        "Special discount system",
+        "Food recommendations",
+        "Rating & review system",
+        "Order confirmation workflow",
+        "Location-based services",
+      ],
+    },
+    {
       title: "Movie Recommendation System",
       description:
         "A collaborative filtering-based recommendation system with an intuitive web interface. Users can select movies from a dropdown and receive personalized recommendations. Built using machine learning algorithms and the TMDb API for comprehensive movie data.",
