@@ -25,12 +25,19 @@ export default function Projects() {
     {
       title: "Vendor Comparison Chatbot",
       description:
-        "Built during my internship at SAP Labs, this chatbot helps users compare vendors based on various parameters. Implemented using ReactJS for the frontend, FastAPI for the backend, and FAISS for efficient similarity search.",
+        "Built during my internship at SAP Labs, this intelligent chatbot helps users compare vendors and prices for products. Features comprehensive vendor analysis with ratings, locations, delivery times, and pricing comparisons using ReactJS, FastAPI, and FAISS for efficient similarity search.",
       image: "/images/vendor-chatbot-project.jpg",
-      tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot"],
+      tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot", "SAP Labs"],
       date: "May–July 2024",
       github: "https://github.com/prathibha-15/vendor-comparison-chatbot",
-      features: ["Natural language processing", "Vendor comparison", "Fast similarity search", "Interactive UI"],
+      features: [
+        "Intelligent vendor matching",
+        "Price comparison analysis",
+        "Vendor ratings & reviews",
+        "Location-based filtering",
+        "Delivery time estimation",
+        "Interactive chat interface",
+      ],
     },
     {
       title: "Movie Recommendation System",
