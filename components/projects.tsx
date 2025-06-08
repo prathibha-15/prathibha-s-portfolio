@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Github, ExternalLink, Play, Globe } from "lucide-react"
+import { ChevronLeft, ChevronRight, Github } from "lucide-react"
 
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -128,27 +128,28 @@ export default function Projects() {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1))
   }
 
-  const getDemoIcon = (demoType: string) => {
-    switch (demoType) {
-      case "web":
-        return <Globe className="h-4 w-4" />
-      case "video":
-        return <Play className="h-4 w-4" />
-      default:
-        return <ExternalLink className="h-4 w-4" />
-    }
-  }
+  // Commented out for future use - Demo functionality
+  // const getDemoIcon = (demoType: string) => {
+  //   switch (demoType) {
+  //     case "web":
+  //       return <Globe className="h-4 w-4" />
+  //     case "video":
+  //       return <Play className="h-4 w-4" />
+  //     default:
+  //       return <ExternalLink className="h-4 w-4" />
+  //   }
+  // }
 
-  const getDemoText = (demoType: string) => {
-    switch (demoType) {
-      case "web":
-        return "Live Demo"
-      case "video":
-        return "Video Demo"
-      default:
-        return "Demo"
-    }
-  }
+  // const getDemoText = (demoType: string) => {
+  //   switch (demoType) {
+  //     case "web":
+  //       return "Live Demo"
+  //     case "video":
+  //       return "Video Demo"
+  //     default:
+  //       return "Demo"
+  //   }
+  // }
 
   const container = {
     hidden: { opacity: 0 },
@@ -248,14 +249,15 @@ export default function Projects() {
                             GitHub
                           </a>
                         </Button>
-                        {project.liveDemo && (
+                        {/* Live Demo Button - Commented out for future use */}
+                        {/* {project.liveDemo && (
                           <Button size="sm" className="flex items-center gap-2" asChild>
                             <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                               {getDemoIcon(project.demoType)}
                               {getDemoText(project.demoType)}
                             </a>
                           </Button>
-                        )}
+                        )} */}
                       </div>
                     </CardFooter>
                   </Card>
