@@ -15,29 +15,37 @@ export default function Projects() {
     {
       title: "Yoga Pose Estimation System",
       description:
-        "A real-time AI feedback system that uses OpenCV and SVM to analyze yoga poses and provide instant feedback to users. The system detects key body points and compares them with ideal pose references.",
-      image: "/images/yoga-pose-project.jpg", // Your actual project image
-      tags: ["AI", "OpenCV", "SVM", "Python"],
+        "A real-time AI feedback system that uses OpenCV and SVM to analyze yoga poses and provide instant feedback to users. The system detects key body points, tracks pose accuracy, and displays real-time corrections with skeletal overlay visualization.",
+      image: "/images/yoga-pose-project.jpg",
+      tags: ["AI", "OpenCV", "SVM", "Python", "Computer Vision"],
       date: "Aug–Oct 2024",
       github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
+      features: ["Real-time pose detection", "Accuracy feedback", "20+ FPS performance", "Skeletal visualization"],
     },
     {
       title: "Vendor Comparison Chatbot",
       description:
         "Built during my internship at SAP Labs, this chatbot helps users compare vendors based on various parameters. Implemented using ReactJS for the frontend, FastAPI for the backend, and FAISS for efficient similarity search.",
-      image: "/images/vendor-chatbot-project.jpg", // Your actual project image
-      tags: ["ReactJS", "FastAPI", "FAISS", "NLP"],
+      image: "/images/vendor-chatbot-project.jpg",
+      tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot"],
       date: "May–July 2024",
       github: "https://github.com/prathibha-15/vendor-comparison-chatbot",
+      features: ["Natural language processing", "Vendor comparison", "Fast similarity search", "Interactive UI"],
     },
     {
       title: "Movie Recommendation System",
       description:
         "A collaborative filtering-based recommendation system that suggests movies based on user preferences and viewing history. Utilizes the TMDb API for movie data and implements matrix factorization algorithms.",
-      image: "/images/movie-recommendation-project.jpg", // Your actual project image
-      tags: ["Python", "Collaborative Filtering", "TMDb API"],
+      image: "/images/movie-recommendation-project.jpg",
+      tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning"],
       date: "Apr–May 2024",
       github: "https://github.com/prathibha-15/movie-recommendation",
+      features: [
+        "Collaborative filtering",
+        "TMDb integration",
+        "Personalized recommendations",
+        "User preference analysis",
+      ],
     },
   ]
 
@@ -106,7 +114,6 @@ export default function Projects() {
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         onError={(e) => {
-                          // Fallback to placeholder if image fails to load
                           e.currentTarget.src = "/placeholder.svg?height=400&width=600"
                         }}
                       />
@@ -117,6 +124,21 @@ export default function Projects() {
                         <span className="text-sm text-gray-500 dark:text-gray-400">{project.date}</span>
                       </div>
                       <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+
+                      {project.features && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
+                          <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            {project.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-center">
+                                <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map((tag, idx) => (
                           <span key={idx} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
