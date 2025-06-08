@@ -21,7 +21,7 @@ export default function Projects() {
       date: "Aug–Oct 2024",
       github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
       liveDemo: "https://your-yoga-app.vercel.app", // Replace with actual URL
-      demoType: "web", // web, video, or unavailable
+      demoType: "unavailable", // web, video, or unavailable
       features: ["Real-time pose detection", "Accuracy feedback", "20+ FPS performance", "Skeletal visualization"],
     },
     {
@@ -31,9 +31,9 @@ export default function Projects() {
       image: "/images/vendor-chatbot-project.jpg",
       tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot", "SAP Labs"],
       date: "May–July 2024",
-      github: "https://github.com/prathibha-15/vendor-comparison-chatbot",
+      github: "https://github.com/prathibha-15",
       liveDemo: "https://your-vendor-chatbot.vercel.app", // Replace with actual URL
-      demoType: "web",
+      demoType: "unavailable",
       features: [
         "Intelligent vendor matching",
         "Price comparison analysis",
@@ -52,7 +52,7 @@ export default function Projects() {
       date: "Jan–Mar 2024",
       github: "https://github.com/prathibha-15/Hotel-Concierge-Project",
       liveDemo: "https://www.youtube.com/watch?v=your-demo-video", // Video demo
-      demoType: "video",
+      demoType: "unavailable",
       features: [
         "24/7 automated guest assistance",
         "Room booking & management",
@@ -69,9 +69,9 @@ export default function Projects() {
       image: "/images/snack-squad-project.jpg",
       tags: ["Android", "Kotlin", "Mobile Development", "UI/UX", "Food Tech"],
       date: "Sep–Nov 2023",
-      github: "https://github.com/prathibha-15/Snack-Squad-App",
+      github: "https://github.com/prathibha-15/Snack-squad-Project",
       liveDemo: "https://www.youtube.com/watch?v=your-snack-squad-demo", // Video demo
-      demoType: "video",
+      demoType: "unavailable",
       features: [
         "Streamlined cart functionality",
         "Special discount system",
@@ -88,9 +88,9 @@ export default function Projects() {
       image: "/images/movie-recommendation-project.jpg",
       tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning", "Web Interface"],
       date: "Apr–May 2024",
-      github: "https://github.com/prathibha-15/movie-recommendation",
+      github: "https://github.com/prathibha-15",
       liveDemo: "https://your-movie-recommender.streamlit.app", // Streamlit app
-      demoType: "web",
+      demoType: "unavailable",
       features: [
         "Interactive movie selection",
         "Real-time recommendations",
