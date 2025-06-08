@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react"
+import { ChevronLeft, ChevronRight, Github, ExternalLink, Play, Globe } from "lucide-react"
 
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -20,6 +20,8 @@ export default function Projects() {
       tags: ["AI", "OpenCV", "SVM", "Python", "Computer Vision"],
       date: "Aug–Oct 2024",
       github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
+      liveDemo: "https://your-yoga-app.vercel.app", // Replace with actual URL
+      demoType: "web", // web, video, or unavailable
       features: ["Real-time pose detection", "Accuracy feedback", "20+ FPS performance", "Skeletal visualization"],
     },
     {
@@ -30,6 +32,8 @@ export default function Projects() {
       tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot", "SAP Labs"],
       date: "May–July 2024",
       github: "https://github.com/prathibha-15/vendor-comparison-chatbot",
+      liveDemo: "https://your-vendor-chatbot.vercel.app", // Replace with actual URL
+      demoType: "web",
       features: [
         "Intelligent vendor matching",
         "Price comparison analysis",
@@ -47,6 +51,8 @@ export default function Projects() {
       tags: ["AI", "NLP", "Hospitality Tech", "Face Recognition", "Chatbot", "PMS Integration"],
       date: "Jan–Mar 2024",
       github: "https://github.com/prathibha-15/Hotel-Concierge-Project",
+      liveDemo: "https://www.youtube.com/watch?v=your-demo-video", // Video demo
+      demoType: "video",
       features: [
         "24/7 automated guest assistance",
         "Room booking & management",
@@ -64,6 +70,8 @@ export default function Projects() {
       tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning", "Web Interface"],
       date: "Apr–May 2024",
       github: "https://github.com/prathibha-15/movie-recommendation",
+      liveDemo: "https://your-movie-recommender.streamlit.app", // Streamlit app
+      demoType: "web",
       features: [
         "Interactive movie selection",
         "Real-time recommendations",
@@ -80,6 +88,28 @@ export default function Projects() {
 
   const prevProject = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1))
+  }
+
+  const getDemoIcon = (demoType: string) => {
+    switch (demoType) {
+      case "web":
+        return <Globe className="h-4 w-4" />
+      case "video":
+        return <Play className="h-4 w-4" />
+      default:
+        return <ExternalLink className="h-4 w-4" />
+    }
+  }
+
+  const getDemoText = (demoType: string) => {
+    switch (demoType) {
+      case "web":
+        return "Live Demo"
+      case "video":
+        return "Video Demo"
+      default:
+        return "Demo"
+    }
   }
 
   const container = {
@@ -180,12 +210,14 @@ export default function Projects() {
                             GitHub
                           </a>
                         </Button>
-                        <Button size="sm" className="flex items-center gap-2" asChild>
-                          <a href="#demo" onClick={(e) => e.preventDefault()}>
-                            <ExternalLink className="h-4 w-4" />
-                            Live Demo
-                          </a>
-                        </Button>
+                        {project.liveDemo && (
+                          <Button size="sm" className="flex items-center gap-2" asChild>
+                            <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                              {getDemoIcon(project.demoType)}
+                              {getDemoText(project.demoType)}
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </CardFooter>
                   </Card>
