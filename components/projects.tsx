@@ -20,9 +20,28 @@ export default function Projects() {
       tags: ["AI", "OpenCV", "SVM", "Python", "Computer Vision"],
       date: "Aug–Oct 2024",
       github: "https://github.com/prathibha-15/Yoga-Pose-Estimation-Project",
-      liveDemo: "https://your-yoga-app.vercel.app", // Replace with actual URL
-      demoType: "unavailable", // web, video, or unavailable
+      liveDemo: "https://your-yoga-app.vercel.app",
+      demoType: "unavailable",
       features: ["Real-time pose detection", "Accuracy feedback", "20+ FPS performance", "Skeletal visualization"],
+    },
+    {
+      title: "DCGAN Face Generator",
+      description:
+        "An advanced Deep Convolutional Generative Adversarial Network that generates synthetic faces from textual descriptions. Trained on the CelebA dataset with 200,000+ images and 40 facial attributes, this system assists in criminal profiling and forensic investigations by creating realistic suspect faces based on witness descriptions.",
+      image: "/images/dcgan-face-generator-project.jpg",
+      tags: ["DCGAN", "Deep Learning", "Computer Vision", "CelebA", "Forensics", "PyTorch"],
+      date: "Dec 2023–Feb 2024",
+      github: "https://github.com/prathibha-15/DCGAN-Face-Generator",
+      liveDemo: "https://your-dcgan-demo.streamlit.app",
+      demoType: "unavailable",
+      features: [
+        "Text-to-face generation",
+        "40+ facial attributes support",
+        "High-resolution image synthesis",
+        "Criminal profiling applications",
+        "CelebA dataset training",
+        "Real-time face generation",
+      ],
     },
     {
       title: "Vendor Comparison Chatbot",
@@ -32,7 +51,7 @@ export default function Projects() {
       tags: ["ReactJS", "FastAPI", "FAISS", "NLP", "Chatbot", "SAP Labs"],
       date: "May–July 2024",
       github: "https://github.com/prathibha-15",
-      liveDemo: "https://your-vendor-chatbot.vercel.app", // Replace with actual URL
+      liveDemo: "https://your-vendor-chatbot.vercel.app",
       demoType: "unavailable",
       features: [
         "Intelligent vendor matching",
@@ -51,7 +70,7 @@ export default function Projects() {
       tags: ["AI", "NLP", "Hospitality Tech", "Face Recognition", "Chatbot", "PMS Integration"],
       date: "Jan–Mar 2024",
       github: "https://github.com/prathibha-15/Hotel-Concierge-Project",
-      liveDemo: "https://www.youtube.com/watch?v=your-demo-video", // Video demo
+      liveDemo: "https://www.youtube.com/watch?v=your-demo-video",
       demoType: "unavailable",
       features: [
         "24/7 automated guest assistance",
@@ -70,7 +89,7 @@ export default function Projects() {
       tags: ["Android", "Kotlin", "Mobile Development", "UI/UX", "Food Tech"],
       date: "Sep–Nov 2023",
       github: "https://github.com/prathibha-15/Snack-squad-Project",
-      liveDemo: "https://www.youtube.com/watch?v=your-snack-squad-demo", // Video demo
+      liveDemo: "https://www.youtube.com/watch?v=your-snack-squad-demo",
       demoType: "unavailable",
       features: [
         "Streamlined cart functionality",
@@ -89,7 +108,7 @@ export default function Projects() {
       tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning", "Web Interface"],
       date: "Apr–May 2024",
       github: "https://github.com/prathibha-15",
-      liveDemo: "https://your-movie-recommender.streamlit.app", // Streamlit app
+      liveDemo: "https://your-movie-recommender.streamlit.app",
       demoType: "unavailable",
       features: [
         "Interactive movie selection",
