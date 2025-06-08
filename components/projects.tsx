@@ -35,16 +35,17 @@ export default function Projects() {
     {
       title: "Movie Recommendation System",
       description:
-        "A collaborative filtering-based recommendation system that suggests movies based on user preferences and viewing history. Utilizes the TMDb API for movie data and implements matrix factorization algorithms.",
+        "A collaborative filtering-based recommendation system with an intuitive web interface. Users can select movies from a dropdown and receive personalized recommendations. Built using machine learning algorithms and the TMDb API for comprehensive movie data.",
       image: "/images/movie-recommendation-project.jpg",
-      tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning"],
+      tags: ["Python", "Collaborative Filtering", "TMDb API", "Machine Learning", "Web Interface"],
       date: "Apr–May 2024",
       github: "https://github.com/prathibha-15/movie-recommendation",
       features: [
-        "Collaborative filtering",
-        "TMDb integration",
-        "Personalized recommendations",
-        "User preference analysis",
+        "Interactive movie selection",
+        "Real-time recommendations",
+        "TMDb API integration",
+        "Clean, responsive UI",
+        "Collaborative filtering algorithm",
       ],
     },
   ]
