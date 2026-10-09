@@ -1,105 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
+import { Menu, X } from "lucide-react"
+
+const links = [{ label: "About", href: "#about" }, { label: "Work", href: "#projects" }, { label: "Journey", href: "#experience" }, { label: "Contact", href: "#contact" }]
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
-  ]
-
-  if (!mounted) return null
-
-  return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold gradient-text">
-              Prathibha M
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="mr-2"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-
-            {/* Mobile menu button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-    </header>
-  )
+  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", onScroll); return () => window.removeEventListener("scroll", onScroll) }, [])
+  return <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? "border-b border-border/70 bg-background/85 backdrop-blur-xl" : "bg-transparent"}`}><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12"><Link href="#home" className="font-serif text-xl tracking-tight">P<span className="text-accent">.</span>M</Link><nav className="hidden items-center gap-9 md:flex">{links.map((link, i) => <Link key={link.href} href={link.href} className="nav-link"><span>0{i + 1}</span>{link.label}</Link>)}</nav><button className="md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X /> : <Menu />}</button></div>{open && <nav className="border-t border-border/70 bg-background px-5 py-6 md:hidden">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="block border-b border-border/50 py-4 text-sm uppercase tracking-[0.18em]">{link.label}</Link>)}</nav>}</header>
 }
