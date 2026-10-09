@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUpRight, Download, Sparkles } from "lucide-react"
 
-const profileImage = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-09%20at%208.34.51%20PM-JxVSCgIZZY5pipwwerqdEi8S1BSztt.jpeg"
+const profileImage = "/prathibha-beach.jpeg"
 
 export default function Hero() {
   return (
